@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভূমি উন্নয়ন কর পরিশোধ রশিদ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kalpurush', 'SolaimanLipi', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .receipt-container {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .header .form-info {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .serial-number {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+            text-align: center;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .payment-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .payment-row:last-child {
+            border-bottom: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding-top: 15px;
+        }
+
+        .total-words {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            text-align: center;
+        }
+
+        .footer-note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .challan-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .receipt-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <div class="header">
+            <h1>বাংলাদেশ ফরম নং ১০৭৭ (পরিশিষ্ট : ৩৮)</h1>
+            <div class="form-info">(সংশোধিত)</div>
+            <h1 style="margin-top: 15px;">ভূমি উন্নয়ন কর পরিশোধ রশিদ</h1>
+            <div class="form-info">(অনুচ্ছেদ ৩৯২ দ্রষ্টব্য)</div>
+            <div class="serial-number">ক্রমিক নং: ২৬১২২২০১১৯১৯</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📍 অফিসের তথ্য</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">অফিসের নাম</div>
+                    <div class="info-value">নীপাড়া ইউনিয়ন ভূমি অফিস</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">মৌজার নাম ও জে. এল. নং</div>
+                    <div class="info-value">নীপাড়া-৫</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">উপজেলা/থানা</div>
+                    <div class="info-value">ডোমার</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">জেলা</div>
+                    <div class="info-value">ঢাকা</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🏠 সম্পত্তির তথ্য</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">২ নং রেজিস্টার অনুযায়ী হোল্ডিং নম্বর</div>
+                    <div class="info-value">১৮৯/৬১</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">খতিয়ান নং</div>
+                    <div class="info-value">১২০৬২</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">সর্বমোট জমি (শতক)</div>
+                    <div class="info-value">৮.২৮</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">👤 মালিকের বিবরণ</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ক্রমঃ</th>
+                        <th>মালিকের নাম</th>
+                        <th>মালিকের অংশ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১</td>
+                        <td>মোঃ আনছার আলী</td>
+                        <td>০.১২৫</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📋 জমির বিবরণ</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ক্রমঃ</th>
+                        <th>দাগ নং</th>
+                        <th>জমির শ্রেণী</th>
+                        <th>জমির পরিমাণ (শতক)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>১</td>
+                        <td>১১১২৭</td>
+                        <td>নাল (আবাসিক)</td>
+                        <td>৮.২৮০০০</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">💰 আদায়ের বিবরণ</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>তিন বৎসরের ঊর্ধ্বে বকেয়া</th>
+                        <th>গত তিন বৎসরের বকেয়া</th>
+                        <th>বকেয়ার সুদ ও ক্ষতিপূরণ</th>
+                        <th>হাল দাবি</th>
+                        <th>মোট দাবি</th>
+                        <th>মোট আদায়</th>
+                        <th>মোট বকেয়া</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>০</td>
+                        <td>৩,৩০০</td>
+                        <td>২০৭</td>
+                        <td>৩,৩০০</td>
+                        <td>৬,৮০৭</td>
+                        <td>৬,৮০৭</td>
+                        <td>০</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="payment-summary">
+                <div class="payment-row">
+                    <span>মন্তব্য:</span>
+                    <span>০</span>
+                </div>
+                <div class="payment-row">
+                    <span>সর্বমোট:</span>
+                    <span>৬,৮০৭ টাকা</span>
+                </div>
+            </div>
+
+            <div class="total-words">
+                সর্বমোট (কথায়): ছয় হাজার আট শত সাত টাকা মাত্র।
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📅 পরিশোধের তথ্য</div>
+            <div class="challan-info">
+                <div class="info-item">
+                    <div class="info-label">সর্বশেষ কর পরিশোধের সাল</div>
+                    <div class="info-value">২০২৪-২০২৫ (অর্থবছর)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">চালান নং</div>
+                    <div class="info-value">২৩২৪-০০০৭৮৩১২৮৮</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">তারিখ</div>
+                    <div class="info-value">২০ আষাঢ় ১৪৩১ / ০৪ জুলাই, ২০২৪</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-note">
+                <strong>📌 নোট:</strong> এই দাখিলা ইলেকট্রনিকভাবে তৈরি করা হয়েছে, কোন স্বাক্ষর প্রয়োজন নেই।
+            </div>
+            <div style="margin-top: 20px; color: #7f8c8d; font-size: 12px;">
+                1/1
+            </div>
+        </div>
+    </div>
+</body>
+</html>
